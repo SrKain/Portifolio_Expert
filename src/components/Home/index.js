@@ -13,7 +13,7 @@ const Home = () => {
                 </div>
             </section>
             <section className="w-full h-full px-[20%]">
-                <a href="https://github.com/srkain" ><img src='./assets/logoKauanIasin.png'/></a>
+                <a href="https://portifolio-expert.vercel.app/" ><img alt="logo do desenvolvedor front-end Kauan Iasin." src='./assets/logoKauanIasin.png'/></a>
             </section>
         </section>
     )
