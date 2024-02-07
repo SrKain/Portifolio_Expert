@@ -51,7 +51,7 @@ function App() {
   }
 
   return (
-    <section className="App flex flex-col gap-2 bg-port-gradient h-[100%] box-border max-w-screen font-secundaria">
+    <section className="App flex flex-col md:gap-2 bg-port-gradient md:h-[100%] md:box-border md:max-w-screen md:font-secundaria">
       <Header pages={pages} paginaatual={(pagina, titulo) => mudapagina(pagina, titulo)}/>
       <Content pagina={atual}></Content>
       <Footer>Desenvolvido por Kauan Iasin.</Footer>
