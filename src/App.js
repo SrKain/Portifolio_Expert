@@ -6,6 +6,7 @@ import Content from './components/Content';
 import About from './components/About';
 import Footer from './components/Footer';
 import Portifolio from './components/Curriculum';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {  
 
@@ -54,6 +55,7 @@ function App() {
       <Header pages={pages} paginaatual={(pagina, titulo) => mudapagina(pagina, titulo)}/>
       <Content pagina={atual}></Content>
       <Footer>Desenvolvido por Kauan Iasin.</Footer>
+      <SpeedInsights/>
     </section>
   );
 }
