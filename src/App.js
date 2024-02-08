@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
 import './App.css';
+import { useEffect, useState } from 'react';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Header from './components/Header';
 import Home from './components/Home';
 import Content from './components/Content';
 import About from './components/About';
 import Footer from './components/Footer';
 import Portifolio from './components/Curriculum';
-import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {  
 
@@ -44,15 +44,17 @@ function App() {
   ]
 
   const [atual, setAtual] = useState(<Home/>)
+  const [titulo, setTitulo] = useState(pages[0].titulo)
 
   function mudapagina(pagina, titulo) {
     setAtual(pagina);
     document.title = `${titulo} | Portifólio Kauan Iasin`
+    setTitulo(titulo)
   }
 
   return (
     <section className="App flex flex-col md:gap-2 bg-port-gradient md:h-[100%] md:box-border md:max-w-screen md:font-secundaria">
-      <Header pages={pages} paginaatual={(pagina, titulo) => mudapagina(pagina, titulo)}/>
+      <Header pages={pages} pagina={atual} tituloatual={titulo} paginaatual={(pagina, titulo) => mudapagina(pagina, titulo)}/>
       <Content pagina={atual}></Content>
       <Footer>Desenvolvido por Kauan Iasin.</Footer>
       <SpeedInsights/>
