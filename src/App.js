@@ -10,6 +10,12 @@ import Portifolio from './components/Curriculum';
 
 function App() {  
 
+  const perfilGitHub = {
+    url:'https://github.com/srkain.png',
+    alt:'Foto de Perfil do desenvolvedor front-end Kauan Iasin',
+  }
+
+
   const [repos, setRepos] = useState('')
 
   function getApiFromGitHub  () {
@@ -35,11 +41,11 @@ function App() {
     },
     {
       titulo: 'Sobre mim',
-      conteudo: <About/>,
+      conteudo: <About img={perfilGitHub} />,
     },
     {
       titulo: 'Meu Portifólio',
-      conteudo: <Portifolio api={repos} />,
+      conteudo: <Portifolio img={perfilGitHub} api={repos} />,
     },
   ]
 
