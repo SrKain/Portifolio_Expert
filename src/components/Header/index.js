@@ -23,17 +23,13 @@ const Header = (props) => {
           !display ? "flex-row justify-evenly" : "flex-col"
         } gap-5 items-end justify-center w-full`}
       >
-        <button
-          onClick={() => {
-            props.paginaatual(props.pagina, props.tituloatualtitulo);
-            setDisplay(true)
-          }}
+        <h2
           className={`md:hidden font-principal ${
             display == true ? "hidden" : "flex"
           } text-cyan-300 p-2 bg-smooth-gradient-up rounded-xl`}
         >
           {props.tituloatual}
-        </button>
+        </h2>
 
         {display == false ? (
           <AiOutlineMenu
