@@ -1,4 +1,3 @@
-import "./App.css";
 import { useEffect, useState } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Header from "./components/Header";
