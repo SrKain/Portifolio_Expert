@@ -7,11 +7,12 @@ import Content from './components/Content';
 import About from './components/About';
 import Footer from './components/Footer';
 import Portifolio from './components/Curriculum';
+const perfil = 'https://github.com/srkain.png';
 
 function App() {  
 
   const perfilGitHub = {
-    url:'https://github.com/srkain.png',
+    url: perfil,
     alt:'Foto de Perfil do desenvolvedor front-end Kauan Iasin',
   }
 
