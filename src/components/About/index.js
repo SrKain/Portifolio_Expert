@@ -3,8 +3,11 @@ const About = (props) => {
     <section className="text-white md:grid md:grid-cols-2 flex flex-col-reverse md:gap-[5%] p-[10%] md:px-[8%] md:py-[5%] items-center">
       <div className="font-principal text-xl text-start gap-[1rem] flex flex-col">
         <h1 className="text-2xl md:text-3xl">
-          Sou{" "}
-          <strong className="text-cyan-300 font-semibold">Kauan Iasin,</strong>{" "}
+          Sou
+          <strong className="text-cyan-300 font-semibold">
+            {" "}
+            Kauan Iasin,
+          </strong>{" "}
           especialista em
           <strong className="text-cyan-300 font-semibold">
             CSS, HTML, REACT E TAILWIND.
@@ -31,16 +34,18 @@ const About = (props) => {
         </h2>
       </div>
       <div className="flex justify-center items-center">
-        <a
-          className="rounded-full p-[5%]"
-          href="https://www.linkedin.com/in/kauan-iasin-504b24253/"
-        >
           <img
-            className="flex border-solid border-2 border-cyan-300 rounded-full p-1 "
-            src={props.img.url}
-            alt={props.img.alt}
+            src="../assets/fotoPerfilGitHub.jpeg"
+            alt="foto de perfil do desenvolvedor em front-end Kauan Iasin"
+            style={{
+              borderRadius: "50%",
+              display: "flex",
+              border: "solid",
+              borderWidth: "2px",
+              padding: "0.25rem",
+              borderColor: "rgb(103 232 249) ",
+            }}
           />
-        </a>
       </div>
     </section>
   );

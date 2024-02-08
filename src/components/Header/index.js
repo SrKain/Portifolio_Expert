@@ -7,12 +7,12 @@ const Header = (props) => {
   return (
     <section
       className={`flex ${
-        display == true ? "h-[30vh]" : "h-[15vh]"
+        display === true ? "h-[30vh]" : "h-[15vh]"
       } md:h-[15vh] max-w-full max-h-full items-center px-8 my-5 justify-between gap-[8%] md:gap-[10%]`}
     >
       <a className="h-full w-auto" href="https://portifolio-expert.vercel.app/">
         <img
-          className={`${display == true ? "h-1/2" : "h-full"} md:h-full`}
+          className={`${display === true ? "h-1/2" : "h-full"} md:h-full`}
           alt="logo do desenvvolvedor Front-end Kauan Iasin."
           src="./assets/logoKauanIasin.png"
         />
@@ -25,17 +25,17 @@ const Header = (props) => {
       >
         <h2
           className={`md:hidden font-principal ${
-            display == true ? "hidden" : "flex"
+            display === true ? "hidden" : "flex"
           } text-cyan-300 p-2 bg-smooth-gradient-up rounded-xl`}
         >
           {props.tituloatual}
         </h2>
 
-        {display == false ? (
+        {display === false ? (
           <AiOutlineMenu
             className="text-cyan-300 md:hidden"
             onClick={() => {
-              display == true ? setDisplay(false) : setDisplay(true);
+              display === true ? setDisplay(false) : setDisplay(true);
             }}
             size={40}
           />
@@ -43,7 +43,7 @@ const Header = (props) => {
           <AiOutlineMenuUnfold
             className="text-cyan-300 md:hidden"
             onClick={() => {
-              display == true ? setDisplay(false) : setDisplay(true);
+              display === true ? setDisplay(false) : setDisplay(true);
             }}
             size={40}
           />
@@ -51,7 +51,7 @@ const Header = (props) => {
 
         <nav
           className={`md:flex md:flex-row w-full md:justify-evenly ${
-            display == true
+            display === true
               ? `flex flex-col gap-4 justify-evenly h-full`
               : "hidden"
           }`}

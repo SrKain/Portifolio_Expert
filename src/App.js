@@ -1,25 +1,24 @@
-import './App.css';
-import { useEffect, useState } from 'react';
+import "./App.css";
+import { useEffect, useState } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import Header from './components/Header';
-import Home from './components/Home';
-import Content from './components/Content';
-import About from './components/About';
-import Footer from './components/Footer';
-import Portifolio from './components/Curriculum';
-const perfil = 'https://github.com/srkain.png';
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Content from "./components/Content";
+import About from "./components/About";
+import Footer from "./components/Footer";
+import Portifolio from "./components/Curriculum";
 
-function App() {  
+function App() {
+  const perfilGitHubSquare = (
+    <img
+      src="./assets/fotoPerfilGitHub.jpeg"
+      alt="foto de perfil do desenvolvedor em front-end Kauan Iasin"
+    />
+  );
 
-  const perfilGitHub = {
-    url: perfil,
-    alt:'Foto de Perfil do desenvolvedor front-end Kauan Iasin',
-  }
+  const [repos, setRepos] = useState("");
 
-
-  const [repos, setRepos] = useState('')
-
-  function getApiFromGitHub  () {
+  function getApiFromGitHub() {
     fetch("https://api.github.com/users/srkain/repos")
       .then(async (res) => {
         if (!res.ok) {
@@ -29,7 +28,7 @@ function App() {
         setRepos(data);
       })
       .catch((erro) => console.log(erro));
-  };
+  }
 
   useEffect(() => {
     getApiFromGitHub();
@@ -37,34 +36,39 @@ function App() {
 
   const pages = [
     {
-      titulo: 'Home',
-      conteudo: <Home/>,
+      titulo: "Home",
+      conteudo: <Home />,
     },
     {
-      titulo: 'Sobre mim',
-      conteudo: <About img={perfilGitHub} />,
+      titulo: "Sobre mim",
+      conteudo: <About/>,
     },
     {
-      titulo: 'Meu Portifólio',
-      conteudo: <Portifolio img={perfilGitHub} api={repos} />,
+      titulo: "Meu Portifólio",
+      conteudo: <Portifolio img={perfilGitHubSquare} api={repos} />,
     },
-  ]
+  ];
 
-  const [atual, setAtual] = useState(<Home/>)
-  const [titulo, setTitulo] = useState(pages[0].titulo)
+  const [atual, setAtual] = useState(<Home />);
+  const [titulo, setTitulo] = useState(pages[0].titulo);
 
   function mudapagina(pagina, titulo) {
     setAtual(pagina);
-    document.title = `${titulo} | Portifólio Kauan Iasin`
-    setTitulo(titulo)
+    document.title = `${titulo} | Portifólio Kauan Iasin`;
+    setTitulo(titulo);
   }
 
   return (
     <section className="App flex flex-col md:gap-2 bg-port-gradient md:h-[100%] md:box-border md:max-w-screen md:font-secundaria">
-      <Header pages={pages} pagina={atual} tituloatual={titulo} paginaatual={(pagina, titulo) => mudapagina(pagina, titulo)}/>
+      <Header
+        pages={pages}
+        pagina={atual}
+        tituloatual={titulo}
+        paginaatual={(pagina, titulo) => mudapagina(pagina, titulo)}
+      />
       <Content pagina={atual}></Content>
       <Footer>Desenvolvido por Kauan Iasin.</Footer>
-      <SpeedInsights/>
+      <SpeedInsights />
     </section>
   );
 }

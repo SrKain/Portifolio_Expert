@@ -6,10 +6,7 @@ const Portifolio = (props) => {
     <section className="text-white p-[5%]">
       <section className=" gap-[2%] md:grid md:grid-cols-[1fr_4fr] flex flex-col">
         <section className="p-[8%] md:p-0">
-          <img
-            src={props.img.url}
-            alt={props.img.alt}
-          />
+          {props.img}
         </section>
         <section className="flex flex-col  items-start">
           <div className="md:grid md:grid-cols-2 flex flex-col gap-5">
