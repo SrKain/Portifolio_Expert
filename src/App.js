@@ -6,6 +6,7 @@ import Content from "./components/Content";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import Portifolio from "./components/Curriculum";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const perfilGitHubSquare = (
@@ -68,6 +69,7 @@ function App() {
       <Content pagina={atual}></Content>
       <Footer>Desenvolvido por Kauan Iasin.</Footer>
       <SpeedInsights />
+      <Analytics/>
     </section>
   );
 }
