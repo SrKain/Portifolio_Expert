@@ -4,7 +4,7 @@ import Project from "../ProjectFromApi";
 const Portifolio = (props) => {
   return (
     <section className="text-white p-[5%]">
-      <section className=" gap-[2%] md:grid md:grid-cols-[1fr_4fr] flex flex-col">
+      <section className=" p-[5%] gap-[2%] md:grid md:grid-cols-[1fr_4fr] flex flex-col">
         <section className="p-[8%] md:p-0">
           {props.img}
         </section>
@@ -21,7 +21,7 @@ const Portifolio = (props) => {
               </div>
             </div>
 
-            <div>
+            <div className="flex flex-col items-end justify-end">
               <h1 className="font-principal text-cyan-300 font-bold text-2xl md:text-3xl text-start underline">
                 Entre em contato
               </h1>

@@ -29,7 +29,7 @@ const About = (props) => {
             className="hover:underline decoration-solid"
             href="https://api.whatsapp.com/send?phone=5511948675920&text=Ol%C3%A1%21%20Kauan%2C%20vi%20seu%20portif%C3%B3lio%20e%20gostaria%20de%20conversar%21"
           >
-            Que tal conversamos sobre?
+            Que tal entregarmos mais RESULTADOS no seu negócio?
           </a>
         </h2>
       </div>
