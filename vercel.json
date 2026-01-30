@@ -1,45 +1,12 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "build",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html",
-      "missing": [
-        {
-          "type": "header",
-          "key": "x-prerender-rewrite"
-        }
-      ]
-    }
-  ],
-  "headers": [
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/xml"
-        }
-      ]
-    },
-    {
-      "source": "/robots.txt",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/plain"
-        }
-      ]
-    },
-    {
-      "source": "/google18496ac70937a9f1.html",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/html"
-        }
-      ]
+      "source": "/(?!.*\\..*|.*/$)",
+      "destination": "/index.html"
     }
   ]
 }
