@@ -18,4 +18,4 @@ Allow: /
 Crawl-delay: 1
 
 # Reference to sitemap
-Sitemap: https://portifolio-expert.vercel.app/sitemap.xml
+Sitemap: https://iasin.dev.br/sitemap.xml
