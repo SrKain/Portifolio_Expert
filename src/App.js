@@ -1,19 +1,21 @@
 import { useEffect, useState, useCallback } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Content from "./components/Content";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import Portifolio from "./components/Curriculum";
+import Metodo from "./components/Metodo";
 import { Analytics } from '@vercel/analytics/react';
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
-import Metodo from "./components/Metodo";
 
-function App() {
+function AppContent() {
   const [repos, setRepos] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const location = useLocation();
 
   const getApiFromGitHub = useCallback(() => {
     fetch("https://api.github.com/users/srkain/repos")
@@ -39,6 +41,11 @@ function App() {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
@@ -52,44 +59,30 @@ function App() {
   );
 
   const pages = [
-    {
-      titulo: "Home",
-      conteudo: <Home />,
-    },
-    {
-      titulo: "Sobre mim",
-      conteudo: <About/>,
-    },
-    {
-      titulo: "Meu Portifólio",
-      conteudo: <Portifolio img={perfilGitHubSquare} api={repos} />,
-    },
-    {
-      titulo: "Método",
-      conteudo: <Metodo />,
-    },
+    { titulo: "Home", path: "/" },
+    { titulo: "Sobre mim", path: "/sobre" },
+    { titulo: "Meu Portifólio", path: "/portfolio" },
+    { titulo: "Método", path: "/metodo" },
   ];
 
-  const [atual, setAtual] = useState(pages[0].conteudo);
-  const [titulo, setTitulo] = useState(pages[0].titulo);
-
-  function mudapagina(pagina, titulo) {
-    setAtual(pagina);
-    document.title = `${titulo} | Kauan Iasin - Consultoria`;
-    setTitulo(titulo);
-  }
+  const getPageTitle = (pathname) => {
+    const page = pages.find(p => p.path === pathname);
+    return page ? page.titulo : "Home";
+  };
 
   return (
     <section className={`App min-h-screen flex flex-col transition-colors duration-500 ${isDarkMode ? 'bg-port-gradient text-white' : 'bg-light-gradient text-slate-900'} font-secundaria`}>
-      <Header
-        pages={pages}
-        pagina={atual}
-        tituloatual={titulo}
-        paginaatual={(pagina, titulo) => mudapagina(pagina, titulo)}
-      />
+      <Header pages={pages} />
       
-      <main className="flex-grow container mx-auto px-4">
-        <Content pagina={atual}></Content>
+      <main className="flex-grow container mx-auto px-4 py-8">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<About />} />
+          <Route path="/portfolio" element={<Portifolio img={perfilGitHubSquare} api={repos} />} />
+          <Route path="/metodo" element={<Metodo />} />
+          {/* Fallback route */}
+          <Route path="*" element={<Home />} />
+        </Routes>
       </main>
 
       {/* Floating WhatsApp Button */}
@@ -115,6 +108,14 @@ function App() {
       <SpeedInsights />
       <Analytics/>
     </section>
+  );
+}
+
+function App() {
+  return (
+    <Router basename="/">
+      <AppContent />
+    </Router>
   );
 }
 
