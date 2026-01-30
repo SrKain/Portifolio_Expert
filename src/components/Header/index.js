@@ -5,73 +5,76 @@ const Header = (props) => {
   const [display, setDisplay] = useState(false);
 
   return (
-    <section
-      className={`flex ${
-        display === true ? "h-[30vh]" : "h-[15vh]"
-      } md:h-[15vh] max-w-full max-h-full items-center px-8 my-5 justify-between gap-[8%] md:gap-[10%]`}
+    <header
+      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        display ? "h-auto py-8" : "h-24"
+      } flex items-center px-6 md:px-12 justify-between liquid-glass rounded-b-2xl border-t-0`}
     >
-      <a className="h-full w-auto" href="https://portifolio-expert.vercel.app/">
+      <a className="h-16 w-auto flex items-center gap-3" href="/">
         <img
-          className={`${display === true ? "h-1/2" : "h-full"} md:h-full`}
-          alt="logo do desenvvolvedor Front-end Kauan Iasin."
+          className="h-full object-contain hover:rotate-3 transition-transform"
+          alt="Logo Kauan Iasin"
           src="./assets/logoKauanIasin.png"
         />
+        <span className="hidden md:block font-principal text-sm tracking-tighter opacity-80">
+          KAUAN IASIN
+        </span>
       </a>
 
-      <div
-        className={`flex ${
-          !display ? "flex-row justify-evenly" : "flex-col"
-        } gap-5 items-end justify-center w-full`}
-      >
+      <div className="flex items-center gap-4">
         <h2
-          className={`md:hidden font-principal ${
-            display === true ? "hidden" : "flex"
-          } text-cyan-300 p-2 bg-smooth-gradient-up rounded-xl`}
+          className={`md:hidden font-principal text-xs text-cyan-400 px-3 py-1 bg-black/20 rounded-full ${
+            display ? "hidden" : "flex"
+          }`}
         >
           {props.tituloatual}
         </h2>
 
-        {display === false ? (
-          <AiOutlineMenu
-            className="text-cyan-300 md:hidden"
-            onClick={() => {
-              display === true ? setDisplay(false) : setDisplay(true);
-            }}
-            size={40}
-          />
-        ) : (
-          <AiOutlineMenuUnfold
-            className="text-cyan-300 md:hidden"
-            onClick={() => {
-              display === true ? setDisplay(false) : setDisplay(true);
-            }}
-            size={40}
-          />
-        )}
+        <button
+          className="md:hidden text-cyan-400 p-2 hover:bg-white/10 rounded-lg transition-colors"
+          onClick={() => setDisplay(!display)}
+          aria-label="Menu"
+        >
+          {display ? <AiOutlineMenuUnfold size={32} /> : <AiOutlineMenu size={32} />}
+        </button>
 
         <nav
-          className={`md:flex md:flex-row w-full md:justify-evenly ${
-            display === true
-              ? `flex flex-col gap-4 justify-evenly h-full`
+          className={`md:flex md:flex-row items-center gap-6 ${
+            display
+              ? "absolute top-24 left-0 w-full flex flex-col p-8 liquid-glass rounded-b-2xl animate-in fade-in slide-in-from-top-4"
               : "hidden"
           }`}
         >
           {props.pages.map((item) => (
             <button
-              className="bg-smooth-gradient rounded-sm px-[3%] py-[0.5%] border-l-2 border-cyan-300 text-cyan-300 font-sans font-semibold md:hover:border-l-[0.4rem] transition-all duration-75"
-              href="#"
+              className={`relative group px-4 py-2 font-secundaria font-semibold transition-all
+                ${props.tituloatual === item.titulo 
+                  ? "text-cyan-400" 
+                  : "hover:text-cyan-300 opacity-80 hover:opacity-100"
+                }`}
               key={item.titulo}
               onClick={() => {
                 props.paginaatual(item.conteudo, item.titulo);
-                setDisplay(!display);
+                setDisplay(false);
               }}
             >
               {item.titulo}
+              <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-cyan-400 transition-transform duration-300 origin-left 
+                ${props.tituloatual === item.titulo ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} 
+              />
             </button>
           ))}
+          
+          <a 
+            href="#contato" 
+            className="md:ml-4 px-6 py-2 bg-cyan-500 text-white rounded-full font-bold hover:bg-cyan-400 hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all text-center"
+            onClick={() => setDisplay(false)}
+          >
+            VAMOS CONVERSAR
+          </a>
         </nav>
       </div>
-    </section>
+    </header>
   );
 };
 

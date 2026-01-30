@@ -1,22 +1,35 @@
 const Project = (props) => {
   return (
-    <section className="text-white items-center justify-center">
+    <article className="group h-full">
       <a
-        className="grid grid-rows-[1fr_2fr] h-full md:border-none border-solid rounded-xl border-cyan-300 border-[1px] border-b-0"
-        href={props.object.homepage}
+        className="flex flex-col h-full liquid-glass rounded-2xl overflow-hidden transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] border border-white/10"
+        href={props.object.homepage || props.object.html_url}
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <div className="md:bg-cyan-300 flex justify-center rounded-t-xl items-center">
-          <h1 className="font-principal font-bold md:text-black text-cyan-300  text-xl">
-            {props.object.name}
-          </h1>
+        <div className="h-32 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center p-6 border-b border-white/5 group-hover:from-cyan-500/30 group-hover:to-blue-600/30 transition-colors">
+          <h3 className="font-principal font-bold text-cyan-400 text-lg text-center leading-tight group-hover:scale-110 transition-transform">
+            {props.object.name.replace(/-/g, ' ')}
+          </h3>
         </div>
-        <div>
-          <p className=" h-full font-secundaria text-md font-semibold bg-smooth-gradient-up rounded-b-xl text-start px-[5%] py-1">
-            {props.object.description}
+        
+        <div className="flex-grow p-5 flex flex-col gap-4">
+          <p className="font-secundaria text-sm opacity-80 leading-relaxed line-clamp-3">
+            {props.object.description || "Projeto incrível desenvolvido com as melhores práticas de front-end e foco em experiência do usuário."}
           </p>
+          
+          <div className="mt-auto flex items-center justify-between">
+            <span className="text-[10px] font-bold tracking-widest text-cyan-500 uppercase">
+              {props.object.language || "Web Project"}
+            </span>
+            <div className="flex gap-2">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span className="text-[10px] font-medium opacity-50 uppercase">Ver Projeto</span>
+            </div>
+          </div>
         </div>
       </a>
-    </section>
+    </article>
   );
 };
 

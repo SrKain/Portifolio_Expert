@@ -1,41 +1,52 @@
-import { FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
-import { CiLinkedin } from "react-icons/ci";
+import { FaInstagram, FaWhatsapp, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Links = (props) => {
+  const socialLinks = [
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/kauan_iasin/",
+      icon: <FaInstagram size={20} />,
+    },
+    {
+      name: "WhatsApp",
+      url: "https://api.whatsapp.com/send?phone=5511948675920&text=Olá! Kauan, vi seu portifólio e gostaria de conversar!",
+      icon: <FaWhatsapp size={20} />,
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/SrKain",
+      icon: <FaGithub size={20} />,
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/kauan-iasin-504b24253/",
+      icon: <FaLinkedin size={20} />,
+    },
+  ];
+
   return (
-    <div className="flex flex-col justify-center items-center w-[90%] gap-2 m-1">
-      <h3 className="font-secundaria text-lg">{props.children}</h3>
-      <a
-        href="https://www.instagram.com/kauan_iasin/"
-        className="border-solid border-cyan-300 flex justify-start gap-[0.7rem] border-[0.1px] rounded-md md:py-[2%] md:px-[15%] md:w-[65%] w-[90%] px-[20%] py-[5%]  hover:bg-smooth-gradient hover:underline decoration-solid md:hover:w-[67%] transition-all"
-      >
-        <FaInstagram className="text-cyan-300" size={25} />
-        Instagram.
-      </a>
-
-      <a
-        href="https://api.whatsapp.com/send?phone=5511948675920&text=Ol%C3%A1%21%20Kauan%2C%20vi%20seu%20portif%C3%B3lio%20e%20gostaria%20de%20conversar%21"
-        className="border-solid border-cyan-300 flex justify-start gap-[0.7rem] border-[0.1px] rounded-md md:py-[2%] md:px-[15%] md:w-[65%] w-[90%] px-[20%] py-[5%]  hover:bg-smooth-gradient hover:underline decoration-solid md:hover:w-[67%] transition-all"
-      >
-        <FaWhatsapp className="text-cyan-300" size={25} />
-        WhatsApp.
-      </a>
-
-      <a
-        href="https://github.com/SrKain"
-        className="border-solid border-cyan-300 flex justify-start gap-[0.7rem] border-[0.1px] rounded-md md:py-[2%] md:px-[15%] md:w-[65%] w-[90%] px-[20%] py-[5%]  hover:bg-smooth-gradient hover:underline decoration-solid md:hover:w-[67%] transition-all"
-      >
-        <FaGithub className="text-cyan-300" size={25} />
-        GitHub.
-      </a>
-
-      <a
-        href="https://www.linkedin.com/in/kauan-iasin-504b24253/"
-        className="border-solid border-cyan-300 flex justify-start gap-[0.7rem] border-[0.1px] rounded-md md:py-[2%] md:px-[15%] md:w-[65%] w-[90%] px-[20%] py-[5%]  hover:bg-smooth-gradient hover:underline decoration-solid md:hover:w-[67%] transition-all"
-      >
-        <CiLinkedin className="text-cyan-300" size={25} />
-        linkedin.
-      </a>
+    <div className="flex flex-col gap-4 w-full max-w-xs">
+      {props.children && (
+        <h3 className="font-principal text-xs tracking-widest opacity-60 uppercase text-center md:text-start mb-2">
+          {props.children}
+        </h3>
+      )}
+      <div className="grid grid-cols-2 sm:flex sm:flex-col gap-3">
+        {socialLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-4 py-3 liquid-glass rounded-xl text-sm font-semibold hover:bg-cyan-400/20 hover:border-cyan-400/50 transition-all group"
+          >
+            <span className="text-cyan-400 group-hover:scale-110 transition-transform">
+              {link.icon}
+            </span>
+            <span className="hidden sm:inline">{link.name}</span>
+          </a>
+        ))}
+      </div>
     </div>
   );
 };

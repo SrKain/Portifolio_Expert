@@ -1,3 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap será gerado automaticamente ou manualmente em breve
+# Sitemap: https://portifolio-expert.vercel.app/sitemap.xml

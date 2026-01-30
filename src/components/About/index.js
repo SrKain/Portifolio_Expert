@@ -1,51 +1,48 @@
 const About = (props) => {
   return (
-    <section className="text-white md:grid md:grid-cols-2 flex flex-col-reverse md:gap-[5%] p-[10%] md:px-[8%] md:py-[5%] items-center">
-      <div className="font-principal text-xl text-start gap-[1rem] flex flex-col">
-        <h1 className="text-2xl md:text-3xl">
-          Sou
-          <strong className="text-cyan-300 font-semibold">
-            {" "}
-            Kauan Iasin,
-          </strong>{" "}
-          especialista em
-          <strong className="text-cyan-300 font-semibold">
-            CSS, HTML, REACT E TAILWIND.
-          </strong>
+    <section className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 py-12 items-center">
+      <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-left-8 duration-700">
+        <h1 className="font-principal text-3xl md:text-4xl leading-tight">
+          Sou <span className="text-cyan-400">Kauan Iasin</span>, especialista em soluções digitais de alta performance.
         </h1>
-        <p className="font-secundaria text-2xl md:text-xl">
-          Desde sempre fui apaixonado por tecnologia e internet, sempre vi em
-          mim o talento natural para lidar com isso.
-          <br />
-          Então, decidi estudar mais a fundo e me tornar um verdadeiro
-          desenvolvedor, para que assim, eu pudesse me tornar ainda melhor
-          lidando com a área.
-          <br />
-          Agora, busco oportunidades de colocar os meus conhecimentos e talentos
-          em prática, e crescer cada dia mais na minha carreira.
-        </p>
-        <h2 className="text-cyan-300">
+        
+        <div className="liquid-glass p-8 rounded-3xl flex flex-col gap-6">
+          <p className="font-secundaria text-lg leading-relaxed opacity-90">
+            Minha jornada na tecnologia começou com uma curiosidade insaciável sobre como o mundo digital funciona. 
+            Hoje, transformo essa paixão em resultados tangíveis através de arquiteturas sólidas em 
+            <strong className="text-cyan-400"> React, Next.js e Tailwind CSS</strong>.
+          </p>
+          
+          <p className="font-secundaria text-lg leading-relaxed opacity-90">
+            Foco em criar experiências que não apenas pareçam modernas, mas que passem 
+            <strong className="text-cyan-400"> confiabilidade e autoridade</strong> para o seu negócio. 
+            Acredito que cada linha de código deve servir a um propósito estratégico.
+          </p>
+
           <a
-            className="hover:underline decoration-solid"
-            href="https://api.whatsapp.com/send?phone=5511948675920&text=Ol%C3%A1%21%20Kauan%2C%20vi%20seu%20portif%C3%B3lio%20e%20gostaria%20de%20conversar%21"
+            className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 text-white font-bold rounded-xl hover:bg-cyan-400 transition-all hover:shadow-lg group"
+            href="https://api.whatsapp.com/send?phone=5511948675920&text=Olá! Kauan, vi seu portifólio e gostaria de conversar!"
           >
-            Que tal entregarmos mais RESULTADOS no seu negócio?
+            VAMOS ESCALAR SEU NEGÓCIO?
+            <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </a>
-        </h2>
+        </div>
       </div>
-      <div className="flex justify-center items-center">
+
+      <div className="relative group flex justify-center items-center">
+        <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+        <div className="relative liquid-glass p-2 rounded-full">
           <img
-            src="../assets/fotoPerfilGitHub.jpeg"
-            alt="foto de perfil do desenvolvedor em front-end Kauan Iasin"
-            style={{
-              borderRadius: "50%",
-              display: "flex",
-              border: "solid",
-              borderWidth: "2px",
-              padding: "0.25rem",
-              borderColor: "rgb(103 232 249) ",
-            }}
+            src="./assets/fotoPerfilGitHub.jpeg"
+            alt="Kauan Iasin - Consultor de Tecnologia"
+            className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-2 border-cyan-400/30"
           />
+        </div>
+        
+        {/* Floating badge */}
+        <div className="absolute top-0 right-0 md:right-10 liquid-glass px-4 py-2 rounded-2xl border border-cyan-400/50 animate-pulse">
+          <span className="text-xs font-bold text-cyan-400">DISPONÍVEL</span>
+        </div>
       </div>
     </section>
   );
