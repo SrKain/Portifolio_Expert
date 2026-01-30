@@ -1,5 +1,5 @@
 import Links from "../Links";
-import { FaRocket, FaLightbulb, FaChartLine, FaShieldAlt, FaClock, FaUsers } from "react-icons/fa";
+import { FaRocket, FaLightbulb, FaChartLine, FaShieldAlt, FaClock } from "react-icons/fa";
 
 const Home = () => {
     const diferenciais = [

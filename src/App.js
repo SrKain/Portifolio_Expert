@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Content from "./components/Content";
+// import Content from "./components/Content";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import Portifolio from "./components/Curriculum";
@@ -65,10 +65,10 @@ function AppContent() {
     { titulo: "Método", path: "/metodo" },
   ];
 
-  const getPageTitle = (pathname) => {
+  /* const getPageTitle = (pathname) => {
     const page = pages.find(p => p.path === pathname);
     return page ? page.titulo : "Home";
-  };
+  }; */
 
   return (
     <section className={`App min-h-screen flex flex-col transition-colors duration-500 ${isDarkMode ? 'bg-port-gradient text-white' : 'bg-light-gradient text-slate-900'} font-secundaria`}>
