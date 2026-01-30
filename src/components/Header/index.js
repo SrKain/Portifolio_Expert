@@ -66,11 +66,11 @@ const Header = (props) => {
           ))}
           
           <a 
-            href="#contato" 
+            href="https://api.whatsapp.com/send?phone=5541987883510&text=Olá! Kauan, vi seu portifólio e gostaria de conversar!" target="_blank" rel="noopener noreferrer" 
             className="md:ml-4 px-6 py-2 bg-cyan-500 text-white rounded-full font-bold hover:bg-cyan-400 hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all text-center"
             onClick={() => setDisplay(false)}
           >
-            VAMOS CONVERSAR
+            CONTATO IMEDIATO (WHATSAPP)
           </a>
         </nav>
       </div>

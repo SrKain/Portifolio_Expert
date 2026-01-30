@@ -21,9 +21,9 @@ const About = (props) => {
 
           <a
             className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 text-white font-bold rounded-xl hover:bg-cyan-400 transition-all hover:shadow-lg group"
-            href="https://api.whatsapp.com/send?phone=5511948675920&text=Olá! Kauan, vi seu portifólio e gostaria de conversar!"
+            href="https://api.whatsapp.com/send?phone=5541987883510&text=Olá! Kauan, vi seu portifólio e gostaria de conversar!"
           >
-            VAMOS ESCALAR SEU NEGÓCIO?
+            FALE COMIGO AGORA VIA WHATSAPP
             <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>

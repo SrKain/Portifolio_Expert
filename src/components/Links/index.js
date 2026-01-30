@@ -9,7 +9,7 @@ const Links = (props) => {
     },
     {
       name: "WhatsApp",
-      url: "https://api.whatsapp.com/send?phone=5511948675920&text=Olá! Kauan, vi seu portifólio e gostaria de conversar!",
+      url: "https://api.whatsapp.com/send?phone=5541987883510&text=Olá! Kauan, vi seu portifólio e gostaria de conversar!",
       icon: <FaWhatsapp size={20} />,
     },
     {
