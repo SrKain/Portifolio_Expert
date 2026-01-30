@@ -4,7 +4,13 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/index.html",
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-prerender-rewrite"
+        }
+      ]
     }
   ],
   "headers": [
@@ -23,6 +29,15 @@
         {
           "key": "Content-Type",
           "value": "text/plain"
+        }
+      ]
+    },
+    {
+      "source": "/google18496ac70937a9f1.html",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html"
         }
       ]
     }
