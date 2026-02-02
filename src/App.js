@@ -8,6 +8,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Portifolio from "./components/Curriculum";
 import Metodo from "./components/Metodo";
+import Blog from "./components/Blog";
 import { Analytics } from '@vercel/analytics/react';
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
@@ -63,6 +64,7 @@ function AppContent() {
     { titulo: "Sobre mim", path: "/sobre" },
     { titulo: "Meu Portifólio", path: "/portfolio" },
     { titulo: "Método", path: "/metodo" },
+    { titulo: "Blog", path: "/blog" },
   ];
 
   /* const getPageTitle = (pathname) => {
@@ -80,6 +82,7 @@ function AppContent() {
           <Route path="/sobre" element={<About />} />
           <Route path="/portfolio" element={<Portifolio img={perfilGitHubSquare} api={repos} />} />
           <Route path="/metodo" element={<Metodo />} />
+          <Route path="/blog" element={<Blog />} />
           {/* Fallback route */}
           <Route path="*" element={<Home />} />
         </Routes>
