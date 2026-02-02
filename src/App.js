@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Portifolio from "./components/Curriculum";
 import Metodo from "./components/Metodo";
 import Blog from "./components/Blog";
+import BlogPost from "./components/BlogPost";
 import { Analytics } from '@vercel/analytics/react';
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
@@ -83,6 +84,7 @@ function AppContent() {
           <Route path="/portfolio" element={<Portifolio img={perfilGitHubSquare} api={repos} />} />
           <Route path="/metodo" element={<Metodo />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           {/* Fallback route */}
           <Route path="*" element={<Home />} />
         </Routes>

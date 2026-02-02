@@ -1,0 +1,108 @@
+.blog-content {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  font-family: 'Krona One', sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.blog-content p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+}
+
+.blog-content code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.95em;
+}
+
+.blog-content pre {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+}
+
+.blog-content blockquote {
+  border-left-width: 4px;
+  padding-left: 1.5rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.blog-content a {
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.blog-content a:hover {
+  opacity: 0.8;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.blog-content table th,
+.blog-content table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-content table th {
+  background-color: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+  font-weight: 600;
+}
+
+.blog-content hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .blog-content h1 {
+    font-size: 2rem;
+  }
+
+  .blog-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .blog-content p {
+    font-size: 1rem;
+  }
+}
