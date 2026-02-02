@@ -109,14 +109,14 @@ const BlogPost = () => {
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
           components={{
-            h1: ({ node, ...props }) => (
-              <h1 className="font-principal text-4xl md:text-5xl text-cyan-400 mt-12 mb-6 leading-tight" {...props} />
+            h1: ({ node, children, ...props }) => (
+              <h1 className="font-principal text-4xl md:text-5xl text-cyan-400 mt-12 mb-6 leading-tight" {...props}>{children}</h1>
             ),
-            h2: ({ node, ...props }) => (
-              <h2 className="font-principal text-3xl md:text-4xl text-cyan-400 mt-10 mb-5 leading-tight" {...props} />
+            h2: ({ node, children, ...props }) => (
+              <h2 className="font-principal text-3xl md:text-4xl text-cyan-400 mt-10 mb-5 leading-tight" {...props}>{children}</h2>
             ),
-            h3: ({ node, ...props }) => (
-              <h3 className="font-principal text-2xl md:text-3xl text-cyan-300 mt-8 mb-4 leading-tight" {...props} />
+            h3: ({ node, children, ...props }) => (
+              <h3 className="font-principal text-2xl md:text-3xl text-cyan-300 mt-8 mb-4 leading-tight" {...props}>{children}</h3>
             ),
             p: ({ node, ...props }) => (
               <p className="font-secundaria text-lg leading-relaxed opacity-90 mb-6" {...props} />
@@ -148,11 +148,11 @@ const BlogPost = () => {
               ) : (
                 <code className="block bg-black/60 text-cyan-200 p-4 rounded-lg overflow-x-auto font-mono text-sm my-6" {...props} />
               ),
-            a: ({ node, ...props }) => (
-              <a className="text-cyan-400 hover:text-cyan-300 underline transition-colors" {...props} />
+            a: ({ node, children, ...props }) => (
+              <a className="text-cyan-400 hover:text-cyan-300 underline transition-colors" {...props}>{children}</a>
             ),
             img: ({ node, ...props }) => (
-              <img className="rounded-2xl my-8 w-full max-w-3xl mx-auto" {...props} />
+              <img className="rounded-2xl my-8 w-full max-w-3xl mx-auto" alt={props.alt || "Imagem do blog"} {...props} />
             ),
             hr: ({ node, ...props }) => (
               <hr className="border-white/10 my-12" {...props} />
