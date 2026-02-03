@@ -1,8 +1,8 @@
-import { useParams, Link } from "react-router-dom";
-import { FaCalendarAlt, FaUser, FaClock, FaArrowLeft, FaCheckCircle, FaLightbulb, FaRocket } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaCalendarAlt, FaUser, FaClock, FaArrowLeft, FaLightbulb, FaRocket } from "react-icons/fa";
 
 const BlogPost = () => {
-  const { slug } = useParams();
+  // const { slug } = useParams();
 
   const post = {
     id: 1,
