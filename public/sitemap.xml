@@ -67,4 +67,16 @@
     </image:image>
   </url>
 
+  <!-- Blog Post: SEO e Qualificação de Leads -->
+  <url>
+    <loc>https://iasin.dev.br/blog/seo-qualificacao-leads-branding</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://iasin.dev.br/assets/blog_seo_strategy.png</image:loc>
+      <image:title>Como o SEO Qualifica seus Leads - Kauan Iasin</image:title>
+    </image:image>
+  </url>
+
 </urlset>
